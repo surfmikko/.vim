@@ -6,3 +6,4 @@ setlocal smarttab
 setlocal expandtab
 highlight OverLength ctermbg=darkred ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+setlocal expandtab
