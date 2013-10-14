@@ -1,8 +1,10 @@
 "vim: set ft=vimrc:
 
-set nocompatible " Required for Vundle
-filetype off	" Required for Vundle
-
+"
+" Settings required for Vundle
+"
+set nocompatible
+filetype off
 filetype plugin on
 filetype indent on
 
@@ -13,6 +15,12 @@ syntax on
 set modelines=1
 set ignorecase
 set bg=dark
+
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
+setlocal textwidth=79
+setlocal smarttab
 
 
 "
@@ -28,11 +36,9 @@ Bundle 'gmarik/vundle'
 " Load the plugins here
 "
 Bundle 'tpope/vim-fugitive'
+Bundle "scrooloose/syntastic"
+Bundle 'Lokaltog/vim-easymotion'
 
-
-filetype plugin indent on     " Required for Vundle
-
-"
 " Brief help
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
