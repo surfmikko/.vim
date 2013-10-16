@@ -23,6 +23,30 @@ setlocal textwidth=79
 setlocal smarttab
 
 "
+" Fugitive mapping
+"
+"
+map <leader>gs :Gstatus<CR>
+map <leader>gc :Gcommit<CR>
+map <leader>gd :Gdiff<CR>
+map <leader>gb :Gblame<CR>
+"map <leader>gr Gread
+
+" Git Tabs
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
+" Alternatively use
+" "nnoremap th :tabnext<CR>
+" "nnoremap tl :tabprev<CR>
+" "nnoremap tn :tabnew<CR>
+
+"
 " VIM plugins management with Vundle
 "
 set rtp+=~/.vim/bundle/vundle/
@@ -47,3 +71,4 @@ Bundle "Lokaltog/vim-easymotion"
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
+
