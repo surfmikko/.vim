@@ -26,10 +26,12 @@ setlocal smarttab
 " Fugitive mapping
 "
 "
+map <leader>ge :Gedit<CR>
 map <leader>gs :Gstatus<CR>
 map <leader>gc :Gcommit<CR>
 map <leader>gd :Gdiff<CR>
 map <leader>gb :Gblame<CR>
+map <leader>gl :Glog -- %<CR>
 "map <leader>gr Gread
 
 " Git Tabs
@@ -59,6 +61,7 @@ Bundle 'gmarik/vundle'
 " Load the plugins here
 "
 Bundle "SirVer/ultisnips"
+Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
 Bundle "scrooloose/syntastic"
 Bundle "Lokaltog/vim-easymotion"
