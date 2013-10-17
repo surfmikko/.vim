@@ -22,7 +22,6 @@ setlocal shiftwidth=4
 setlocal textwidth=79
 setlocal smarttab
 
-
 "
 " VIM plugins management with Vundle
 "
@@ -35,9 +34,10 @@ Bundle 'gmarik/vundle'
 "
 " Load the plugins here
 "
+Bundle "SirVer/ultisnips"
 Bundle 'tpope/vim-fugitive'
 Bundle "scrooloose/syntastic"
-Bundle 'Lokaltog/vim-easymotion'
+Bundle "Lokaltog/vim-easymotion"
 
 " Brief help
 " :BundleList          - list configured bundles
