@@ -2,15 +2,17 @@
 
 "
 " Settings required for Vundle
+" Note: filetype on + filetype off is intentional, fixes vim exit status to 0
 "
 set nocompatible
+filetype on
 filetype off
 filetype plugin on
 filetype indent on
 
-"
-" General settings
-"
+""
+"" General settings
+""
 syntax on
 set modelines=1
 set ignorecase
@@ -32,7 +34,7 @@ map <leader>gc :Gcommit<CR>
 map <leader>gd :Gdiff<CR>
 map <leader>gb :Gblame<CR>
 map <leader>gl :Glog -- %<CR>
-"map <leader>gr Gread
+map <leader>gr Gread
 
 " Git Tabs
 nnoremap th  :tabfirst<CR>
