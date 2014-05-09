@@ -53,21 +53,6 @@ nnoremap td  :tabclose<CR>
 "
 " VIM plugins management with Vundle
 "
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle (required!)
-Bundle 'gmarik/vundle'
-
-"
-" Load the plugins here
-"
-Bundle "SirVer/ultisnips"
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-fugitive'
-Bundle "scrooloose/syntastic"
-Bundle "Lokaltog/vim-easymotion"
-
 " Brief help
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
@@ -77,9 +62,42 @@ Bundle "Lokaltog/vim-easymotion"
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+
+" let Vundle manage Vundle (required!)
+Plugin 'gmarik/Vundle.vim'
+
+"
+" Load the plugins here
+"
+"
+
+" Load UltiSnips and the snippets (these are separate repos)
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/syntastic'
+Plugin 'Lokaltog/vim-easymotion'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" End of Vundle configuration
+
+" UltiSnips configuration
+" Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
+
 " Clear the search history with enter-key
 nnoremap <CR> :noh<CR><CR>
 
+" Statusline configuration
 set laststatus=2
 set statusline=%t\      "tail of the filename
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
@@ -92,3 +110,5 @@ set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
+
+
