@@ -66,7 +66,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 " let Vundle manage Vundle (required!)
-Plugin 'gmarik/Vundle.vim'
+Plugin 'gmarik/vundle'
 
 "
 " Load the plugins here
@@ -74,16 +74,29 @@ Plugin 'gmarik/Vundle.vim'
 "
 
 " Load UltiSnips and the snippets (these are separate repos)
-Plugin 'SirVer/ultisnips'
+Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
-Plugin 'Lokaltog/vim-easymotion'
+Plugin 'davidhalter/jedi-vim'
+" Easymotion seems not to work
+" Plugin 'lokaltog/vim-easymotion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Easymotion configuration
+"
+"let g:EasyMotion_do_mapping = 0 " Disable default mappings
+"map  s <Plug>(easymotion-s)
+"omap S <Plug>(easymotion-t)
+
+" Jedi configuration
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#use_splits_not_buffers = "top"
+autocmd FileType python setlocal completeopt-=preview
 
 " End of Vundle configuration
 
