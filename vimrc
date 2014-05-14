@@ -1,5 +1,10 @@
 "vim: set ft=vimrc:
 
+" Detect Python files by filename, somehow Python charset definition
+"	# -*- coding: UTF-8 -*-
+" Causes Python files to be detected as "conf" files.
+au BufNewFile,BufRead *.py set filetype=python
+
 "
 " Settings required for Vundle
 " Note: filetype on + filetype off is intentional, fixes vim exit status to 0
@@ -123,5 +128,4 @@ set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
-
 
