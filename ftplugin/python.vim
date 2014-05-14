@@ -4,6 +4,11 @@ setlocal shiftwidth=4
 setlocal textwidth=79
 setlocal smarttab
 setlocal expandtab
+
+" Highlight long lines
 highlight OverLength ctermbg=darkred ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
-setlocal expandtab
+
+" Highlight tabs in beginning of line
+highlight TabLineStart ctermbg=darkred ctermfg=white guibg=#592929
+match TabLineStart /^\t\+/
