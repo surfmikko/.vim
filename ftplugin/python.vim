@@ -12,3 +12,4 @@ match OverLength /\%81v.\+/
 " Highlight tabs in beginning of line
 highlight TabLineStart ctermbg=darkred ctermfg=white guibg=#592929
 match TabLineStart /^\t\+/
+
