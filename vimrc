@@ -50,6 +50,7 @@ nnoremap tt  :tabedit<Space>
 nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
+
 " Alternatively use
 " "nnoremap th :tabnext<CR>
 " "nnoremap tl :tabprev<CR>
@@ -78,19 +79,48 @@ Plugin 'gmarik/vundle'
 "
 "
 
-" Load UltiSnips and the snippets (these are separate repos)
+" Fuzzy file search
+Plugin 'kien/ctrlp.vim'
+
+" Textmate-like snippets; engine and snippets are separate repos
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
+
+" Git integration
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-fugitive'
+
+" Syntax checking for several languages
 Plugin 'scrooloose/syntastic'
+
+" Python autocompletion and refactoring
 Plugin 'davidhalter/jedi-vim'
-" Easymotion seems not to work
-" Plugin 'lokaltog/vim-easymotion'
+
+" Calculate sum, avg, min, max
+Plugin 'nixon/vim-vmath'
+
+" Move selected text around; some dependencies
+Plugin 'vim-scripts/Align'
+Plugin 'clones/vim-cecutil'
+Plugin 'navicore/vis.vim'
+Plugin 'atweiden/vim-dragvisuals'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Ctrlp configuration
+let g:ctrlp_map = '<c-p>'
+
+" DragVisuals configuration
+vmap  <expr>  <LEFT>   DVB_Drag('left')
+vmap  <expr>  <RIGHT>  DVB_Drag('right')
+vmap  <expr>  <DOWN>   DVB_Drag('down')
+vmap  <expr>  <UP>     DVB_Drag('up')
+vmap  <expr>  D        DVB_Duplicate()
+
+" Remove any introduced trailing whitespace after moving...
+let g:DVB_TrimWS = 1
 
 " Easymotion configuration
 "
@@ -124,8 +154,13 @@ set statusline+=%h      "help file flag
 set statusline+=%m      "modified flag
 set statusline+=%r      "read only flag
 set statusline+=%y      "filetype
+set statusline+=%{fugitive#statusline()} " Git branch
 set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
+
+" VMath configuration
+vmap <expr>  ++  VMATH_YankAndAnalyse()
+nmap         ++  vip++
 
