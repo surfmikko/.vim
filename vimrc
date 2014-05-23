@@ -111,6 +111,7 @@ filetype plugin indent on    " required
 
 " Ctrlp configuration
 let g:ctrlp_map = '<c-p>'
+set wildignore+=*.pyc,*/build/lib/*
 
 " DragVisuals configuration
 vmap  <expr>  <LEFT>   DVB_Drag('left')
