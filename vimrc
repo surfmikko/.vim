@@ -165,3 +165,5 @@ set statusline+=\ %P    "percent through file
 vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
 
+" Use gg=G to indent XML-files
+au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
