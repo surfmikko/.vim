@@ -17,10 +17,10 @@ match TabLineStart /^\t\+/
 
 " Highlight tabs in the end of line
 highlight LineEndTabs ctermbg=darkred ctermfg=white guibg=#592929
-match LineEndTabs /\t*$/
+match LineEndTabs /\t\t*$/
 
 " Highlight spaces in end of line
 highlight LineEndWhiteSpace ctermbg=darkred ctermfg=white guibg=#592929
-match LineEndWhiteSpace / *$/
+match LineEndWhiteSpace /  *$/
 
 
