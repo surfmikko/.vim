@@ -18,6 +18,8 @@ filetype indent on
 ""
 "" General settings
 ""
+let mapleader=","
+
 syntax on
 set modelines=1
 set ignorecase
