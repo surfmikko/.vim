@@ -18,7 +18,7 @@ filetype indent on
 ""
 "" General settings
 ""
-let mapleader=","
+let mapleader="\<Space>"
 
 syntax on
 set modelines=1
@@ -31,27 +31,49 @@ setlocal shiftwidth=4
 setlocal textwidth=79
 setlocal smarttab
 
+
+"
+" Experimental leader mappins
+"
+"
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>w :w<CR>
+
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+"
+" Quick fix list
+"
+"
+nnoremap <C-j> :cnext<CR>
+nnoremap <C-k> :cprev<CR>
+
 "
 " Fugitive mapping
 "
 "
-map <leader>ge :Gedit<CR>
-map <leader>gs :Gstatus<CR>
-map <leader>gc :Gcommit<CR>
-map <leader>gd :Gdiff<CR>
-map <leader>gb :Gblame<CR>
-map <leader>gl :Glog -- %<CR>
-map <leader>gr Gread
+noremap <leader>ge :Gedit<CR>
+noremap <leader>gs :Gstatus<CR>
+noremap <leader>gc :Gcommit<CR>
+noremap <leader>gd :Gdiff<CR>
+noremap <leader>gb :Gblame<CR>
+noremap <leader>gr :Gread <CR>
+noremap <leader>gl :Glog -- %<CR>
 
 " Git Tabs
-nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabnext<CR>
-nnoremap tk  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap tt  :tabedit<Space>
-nnoremap tn  :tabnext<Space>
-nnoremap tm  :tabm<Space>
-nnoremap td  :tabclose<CR>
+nnoremap th  :tabfirst<cr>
+nnoremap tj  :tabnext<cr>
+nnoremap tk  :tabprev<cr>
+nnoremap tl  :tablast<cr>
+nnoremap tt  :tabedit<space>
+nnoremap tn  :tabnext<space>
+nnoremap tm  :tabm<space>
+nnoremap td  :tabclose<cr>
 
 " Alternatively use
 " "nnoremap th :tabnext<CR>
@@ -106,6 +128,9 @@ Plugin 'vim-scripts/Align'
 Plugin 'clones/vim-cecutil'
 Plugin 'navicore/vis.vim'
 Plugin 'atweiden/vim-dragvisuals'
+
+" Ctrl+q Ctrl+l for quick/location lists
+Plugin 'milkypostman/vim-togglelist'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
