@@ -5,12 +5,12 @@ Some useful Vim settings for mostly Python programmers.
 
 Main features:
 
-  - Correct indentation rules
-  - Code completion / snippets
-  - Static syntax checking
-  - Python refactoring tools
-  - Git integration
-  - Some other goodies
+- Correct indentation rules
+- Code completion / snippets
+- Static syntax checking
+- Python refactoring tools
+- Git integration
+- Some other goodies
 
 Installation
 ------------
