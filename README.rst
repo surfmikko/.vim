@@ -25,7 +25,7 @@ For OS X you need to install a new version of Vim with Python support::
 
     sudo port install vim +python27
 
-And add the following lines to your ~/.bashrc::
+After this override the system Vim in your ~/.bash_profile::
 
     alias vim=/opt/local/bin/vim
     alias vi=/opt/local/bin/vim
