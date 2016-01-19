@@ -21,11 +21,15 @@ Just clone the repository to your home directory and run `make install`::
     cd .vim
     make install
 
-For OS X you need to install a new version of Vim with Python support::
+For OS X you need to install more recent version of Vim with Python support::
 
     sudo port install vim +python27
 
 After this override the system Vim in your ~/.bash_profile::
 
-    alias vim=/opt/local/bin/vim
-    alias vi=/opt/local/bin/vim
+    export PATH="$PATH:/opt/local/bin"
+    VIM=/opt/local/bin/vim
+    alias vi=$VIM
+    alias vim=$VIM
+    export VISUAL=$VIM
+    export EDITOR=$VIM
