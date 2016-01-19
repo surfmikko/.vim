@@ -1,4 +1,0 @@
-.vimrc
-======
-
-The Settings
