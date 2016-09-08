@@ -126,7 +126,7 @@ Plugin 'nixon/vim-vmath'
 " Move selected text around; some dependencies
 Plugin 'vim-scripts/Align'
 Plugin 'clones/vim-cecutil'
-Plugin 'navicore/vis.vim'
+Plugin 'vim-scripts/vis'
 Plugin 'atweiden/vim-dragvisuals'
 
 " Ctrl+q Ctrl+l for quick/location lists
