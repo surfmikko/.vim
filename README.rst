@@ -5,7 +5,8 @@ Some useful Vim settings for mostly Python programmers.
 
 Main features:
 
-- Correct indentation rules
+- Fuzzy file search
+- Correct Python indentation rules
 - Code completion / snippets
 - Static syntax checking
 - Python refactoring tools
