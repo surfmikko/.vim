@@ -50,8 +50,8 @@ vmap <Leader>P "+P
 " Quick fix list
 "
 "
-nnoremap <C-j> :cnext<CR>
-nnoremap <C-k> :cprev<CR>
+nnoremap <C-j> :lnext<CR>
+nnoremap <C-k> :lprev<CR>
 
 "
 " Fugitive mapping
