@@ -3,6 +3,7 @@
 " Detect Python files by filename, somehow Python charset definition
 "	# -*- coding: UTF-8 -*-
 " Causes Python files to be detected as "conf" files.
+"
 au BufNewFile,BufRead *.py set filetype=python
 
 "
@@ -18,15 +19,17 @@ filetype indent on
 ""
 "" General settings
 ""
-let mapleader="\<Space>"
 
 syntax on
 set modelines=1
-set ignorecase
 set bg=dark
 
+" Search case insensitive
+set ignorecase
+
+" Default indent 4, only spaces, never tabs
 setlocal tabstop=4
-setlocal softtabstop=4
+setlocal softtabstop=0 noexpandtab
 setlocal shiftwidth=4
 setlocal textwidth=79
 setlocal smarttab
@@ -35,10 +38,19 @@ setlocal smarttab
 "
 " Experimental leader mappins
 "
-"
+
+let mapleader="\<Space>"
+
+" Escape insert mode with jj
+imap jj <esc>
+
+" CtrlP open search window
 nnoremap <Leader>o :CtrlP<CR>
+
+" Save file
 nnoremap <Leader>w :w<CR>
 
+" Copy and paste system clipboard for MacVim
 vmap <Leader>y "+y
 vmap <Leader>d "+d
 nmap <Leader>p "+p
@@ -46,12 +58,16 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+
 "
 " Quick fix list
 "
 "
 nnoremap <C-j> :lnext<CR>
 nnoremap <C-k> :lprev<CR>
+
+nnoremap <Leader>j :lnext<CR>
+nnoremap <Leader>k :lprev<CR>
 
 "
 " Fugitive mapping
@@ -196,6 +212,12 @@ nmap         ++  vip++
 " Use gg=G to indent XML-files
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
+"
+" Syntastic configuration
+"
+
+" Toggle error list with <ctrl>e
+
 function! ToggleErrors()
     let old_last_winnr = winnr('$')
     lclose
@@ -204,6 +226,8 @@ function! ToggleErrors()
         Errors
     endif
 endfunction
-
 nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
 
+" Automatically populate quickfix list
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
