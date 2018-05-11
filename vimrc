@@ -134,16 +134,19 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 
 " Python autocompletion and refactoring
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
 
 " Calculate sum, avg, min, max
-Plugin 'nixon/vim-vmath'
+" Plugin 'nixon/vim-vmath'
 
 " Move selected text around; some dependencies
-Plugin 'vim-scripts/Align'
-Plugin 'clones/vim-cecutil'
-Plugin 'vim-scripts/vis'
-Plugin 'atweiden/vim-dragvisuals'
+" Plugin 'vim-scripts/Align'
+" Plugin 'clones/vim-cecutil'
+" Plugin 'vim-scripts/vis'
+" Plugin 'atweiden/vim-dragvisuals'
+
+" Ansible YAML support
+Plugin 'pearofducks/ansible-vim'
 
 " Ctrl+q Ctrl+l for quick/location lists
 Plugin 'milkypostman/vim-togglelist'
@@ -153,8 +156,9 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Ctrlp configuration
+set wildignore+=*.pyc,**/.git/*,venv/*,.venv/*,*/build/lib/*,**/tmp/*,*.so,*.swp,*.zip,**/bower_components/*,**/node_modules/*
 let g:ctrlp_map = '<c-p>'
-set wildignore+=*.pyc,*/build/lib/*,**/tmp/*,*.so,*.swp,*.zip,**/bower_components/*,**/node_modules/*
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard -co |& egrep -v "\.(png|jpg|jpeg|gif)$|node_modules"']
 
 
 " DragVisuals configuration
