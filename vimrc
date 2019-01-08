@@ -41,6 +41,8 @@ setlocal smarttab
 
 let mapleader="\<Space>"
 
+set showcmd
+
 " Escape insert mode with jj
 imap jj <esc>
 
@@ -131,10 +133,15 @@ Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-fugitive'
 
 " Syntax checking for several languages
-Plugin 'scrooloose/syntastic'
+
+if v:version < 800
+	Plugin 'scrooloose/syntastic'
+else
+	Plugin 'w0rp/ale'
+endif
 
 " Python autocompletion and refactoring
-" Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 
 " Calculate sum, avg, min, max
 " Plugin 'nixon/vim-vmath'
@@ -213,25 +220,29 @@ set statusline+=\ %P    "percent through file
 vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
 
+let g:airline_extensions = ['ale', 'branch']
+
 " Use gg=G to indent XML-files
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
-"
 " Syntastic configuration
-"
+if exists("g:_SYNTASTIC_VERSION")
 
-" Toggle error list with <ctrl>e
+	" Toggle error list with <ctrl>e
 
-function! ToggleErrors()
-    let old_last_winnr = winnr('$')
-    lclose
-    if old_last_winnr == winnr('$')
-        " Nothing was closed, open syntastic error location panel
-        Errors
-    endif
-endfunction
-nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
+	function! ToggleErrors()
+		let old_last_winnr = winnr('$')
+		lclose
+		if old_last_winnr == winnr('$')
+			" Nothing was closed, open syntastic error location panel
+			Errors
+		endif
+	endfunction
+	nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
 
-" Automatically populate quickfix list
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+	" Automatically populate quickfix list
+	"
+	let g:syntastic_always_populate_loc_list = 1
+	let g:syntastic_auto_loc_list = 1
+
+endif
