@@ -1,20 +1,22 @@
 .vimrc
 ======
 
-Some useful Vim settings for mostly Python programmers.
+Useful Vim settings for mostly Python developers.
 
-Main features:
-
-- Fuzzy file search
-- Correct Python indentation rules
+- Fast fuzzy file search
 - Code completion / snippets
-- Static syntax checking
+- Python indentation rules
 - Python refactoring tools
+- Static code analysis
 - Git integration
-- Some other goodies
 
 Installation
 ------------
+
+Requirements:
+
+- Vim8.0 or Neovim v0.3.0 (with python-neovim)
+- Python3 support for latest UltiSnips (v3.2 with Python2)
 
 Just clone the repository to your home directory and run `make install`::
 
@@ -22,11 +24,15 @@ Just clone the repository to your home directory and run `make install`::
     cd .vim
     make install
 
-For OS X you need to install more recent version of Vim with Python support::
+For Centos7 you can install Neovim from the Epel repository::
+    
+    sudo make centos7
 
-    sudo port install vim +python27
+For OS X you can install recent Vim8.1 from the Macports repository::
 
-After this override the system Vim in your ~/.bash_profile::
+    sudo make osx
+
+For OSX you may want to override system Vim in your ~/.bash_profile::
 
     export PATH="$PATH:/opt/local/bin"
     VIM=/opt/local/bin/vim

@@ -1,23 +1,38 @@
-install:
-	rm -rf ~/.vimrc
-	ln -s "`pwd`/vimrc" ~/.vimrc
-	[ -d bundle/vundle ] || git clone https://github.com/gmarik/vundle.git \
-		bundle/vundle
-	vim -u vimrc +BundleInstall +q -c ':q'
-	# Vundle handles ftdetect incorrectly and breaks UltiSnips
-	# https://bugs.launchpad.net/ultisnips/+bug/989905
-	[ -d ~/.vim/ftdetect ] || mkdir -p ~/.vim/ftdetect
-	[ -L ~/.vim/ftdetect/UltiSnips.vim ] || \
-		ln -s ~/.vim/bundle/ultisnips/ftdetect/UltiSnips.vim \
-		~/.vim/ftdetect/UltiSnips.vim
-	
+VIMC=vim -u vimrc -c 
 
-update:
-	(cd bundle/vundle; git pull)
-	vim -u vimrc +BundleInstall! +q -c ':q'
+help:
+	@echo "make install		Install configuration for Vim & Neovim"
+	@echo "make centos7		Install Vim for Centos7"
+	@echo "make osx			Install Vim for OSX"
+
+install: clean vimrc neoinit autoload/plug.vim ftdetect/snippets.vim pluginstall
 
 clean:
-	vim -u vimrc +BundleClean! +q -c ':q'
+	rm -rf autoload bundle
 
-distclean:
-	rm -rf bundle
+neoinit:
+	mkdir -p ~/.config/nvim/
+	ln -fs `pwd`/init.vim ~/.config/nvim/init.vim
+
+vimrc:
+	ln -fs "`pwd`/vimrc" ~/.vimrc
+
+ftdetect/snippets.vim:
+	mkdir -p ftdetect
+	ln -fs `pwd`/bundle/ultisnips/ftdetect/snippets.vim \
+		`pwd`/ftdetect/snippets.vim
+
+autoload/plug.vim:
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+pluginstall:
+	${VIMC} ':PlugInstall | qa'
+
+centos7:
+	yum -y install epel-release
+	yum -y update
+	yum -y install neovim python2-neovim python36-neovim
+
+osx:
+	port install vim +python37
