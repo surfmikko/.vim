@@ -1,13 +1,9 @@
 "vim: set ft=vimrc:
 
-" Detect Python files by filename, somehow Python charset definition
-"	# -*- coding: UTF-8 -*-
-" Causes Python files to be detected as "conf" files.
-au BufNewFile,BufRead *.py set filetype=python
-
 ""
 "" General settings
 ""
+
 syntax on
 filetype plugin indent on
 
@@ -175,3 +171,7 @@ if &term =~ "xterm.*"
 	cmap <Esc>[200~ <nop>
 	cmap <Esc>[201~ <nop>
 endif
+
+
+" Detect Python files by filename
+au BufNewFile,BufRead *.py set filetype=python
