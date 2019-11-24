@@ -44,13 +44,13 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
-
-" Quick fix list
+" Location list navigation (syntax check)
 nnoremap <C-j> :lnext<CR>
 nnoremap <C-k> :lprev<CR>
 
-nnoremap <Leader>j :lnext<CR>
-nnoremap <Leader>k :lprev<CR>
+" Quickfix list navigation (Ggr / grep)
+nnoremap <C-l> :cnext<CR>
+nnoremap <C-h> :cprev<CR>
 
 " Fugitive mapping
 noremap <leader>ge :Gedit<CR>
@@ -153,3 +153,22 @@ set statusline+=\ %P    "percent through file
 
 " Use gg=G to indent XML-files
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+
+" Use :Ggr to open grep results in quick-fix list
+:command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
+
+" Tell Vim automatically if pasting text
+if &term =~ "xterm.*"
+	let &t_ti = &t_ti . "\e[?2004h"
+	let &t_te = "\e[?2004l" . &t_te
+	function! XTermPasteBegin(ret)
+		set pastetoggle=<Esc>[201~
+		set paste
+		return a:ret
+	endfunction
+	map <expr> <Esc>[200~ XTermPasteBegin("i")
+	imap <expr> <Esc>[200~ XTermPasteBegin("")
+	vmap <expr> <Esc>[200~ XTermPasteBegin("c")
+	cmap <Esc>[200~ <nop>
+	cmap <Esc>[201~ <nop>
+endif
