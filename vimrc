@@ -111,6 +111,9 @@ Plug 'pearofducks/ansible-vim'
 " Ctrl+q Ctrl+l for quick/location lists
 Plug 'milkypostman/vim-togglelist'
 
+" Commenting and uncommenting lines
+Plug 'scrooloose/nerdcommenter'
+
 call plug#end()
 
 " Ctrlp configuration
