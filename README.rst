@@ -10,6 +10,10 @@ Useful Vim settings for mostly Python developers.
 - Static code analysis
 - Git integration
 
+More help with::
+
+    :h cheatsheet
+
 Installation
 ------------
 

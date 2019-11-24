@@ -1,0 +1,12 @@
+cheatsheet.txt                  For NVIM version 0.3.0  Last change: 2019-11-25
+
+Cheatsheet for Vim. Navigate tags with <CR> and <BS>                 *cheatsheet*
+===============================================================================
+| <C-hl>, <C-jk>                | Next/previous location/quickfix list
+| <leader>l, <leader>q          | Open location/quickfix list
+| <leader>cc                    | Comment lines
+| <C-Space>                     | Completion
+| <leader>g, <leader>d          | Goto assignments/definitions
+| <leader>n                     | Show usages
+| K                             | Show documentation/Pydoc
+| <leader>r                     | Renaming

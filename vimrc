@@ -27,6 +27,9 @@ setlocal smarttab
 " Experimental leader mapping
 let mapleader="\<Space>"
 
+" Open help / cheatsheet
+nnoremap <leader>hh :h cheatsheet<CR>
+
 " Escape insert mode with jj
 imap jj <esc>
 
@@ -108,7 +111,7 @@ Plug 'davidhalter/jedi-vim'
 " Ansible YAML support
 Plug 'pearofducks/ansible-vim'
 
-" Ctrl+q Ctrl+l for quick/location lists
+" <leader>q <leader>l for quick/location lists
 Plug 'milkypostman/vim-togglelist'
 
 " Commenting and uncommenting lines
