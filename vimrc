@@ -4,6 +4,7 @@
 "" General settings
 ""
 
+set nocompatible
 syntax on
 filetype plugin indent on
 
@@ -154,7 +155,7 @@ set statusline+=\ %P    "percent through file
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
 " Use :Ggr to open grep results in quick-fix list
-:command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
+:command! -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
 
 " Tell Vim automatically if pasting text
 if &term =~ "xterm.*"
