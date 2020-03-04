@@ -119,6 +119,8 @@ call plug#end()
 " Ctrlp configuration
 set wildignore+=*.pyc,**/.git/*,venv/*,.venv/*,*/build/lib/*,**/tmp/*,*.so,*.swp,*.zip,**/bower_components/*,**/node_modules/*
 let g:ctrlp_map = '<c-p>'
+
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard -co |& egrep -v "\.(png|jpg|jpeg|gif)$|node_modules"']
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard -co | egrep -v "\.(png|jpg|jpeg|gif)$|node_modules"']
 
 " Jedi configuration
@@ -126,6 +128,8 @@ let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#use_splits_not_buffers = "top"
 autocmd FileType python setlocal completeopt-=preview
 
+" Nerdcommenter - Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
 " UltiSnips configuration
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
