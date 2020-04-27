@@ -5,7 +5,7 @@ help:
 	@echo "make centos7		Install Vim for Centos7"
 	@echo "make osx			Install Vim for OSX"
 
-install: clean vimrc neoinit autoload/plug.vim ftdetect/snippets.vim pluginstall
+install: clean link_vimrc neoinit autoload/plug.vim ftdetect/snippets.vim pluginstall
 
 clean:
 	rm -rf autoload bundle
@@ -14,7 +14,7 @@ neoinit:
 	mkdir -p ~/.config/nvim/
 	ln -fs `pwd`/init.vim ~/.config/nvim/init.vim
 
-vimrc:
+link_vimrc:
 	ln -fs "`pwd`/vimrc" ~/.vimrc
 
 ftdetect/snippets.vim:
