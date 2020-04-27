@@ -52,6 +52,10 @@ nnoremap <C-k> :lprev<CR>
 nnoremap <C-l> :cnext<CR>
 nnoremap <C-h> :cprev<CR>
 
+" Toggle coverage reporting for the module
+noremap <leader>cov :Coveragepy refresh<CR>
+" :Coveragepy refresh<CR>
+
 " Fugitive mapping
 noremap <leader>ge :Gedit<CR>
 noremap <leader>gs :Gstatus<CR>
@@ -114,6 +118,8 @@ Plug 'milkypostman/vim-togglelist'
 " Commenting and uncommenting lines
 Plug 'scrooloose/nerdcommenter'
 
+Plug 'alfredodeza/coveragepy.vim'
+
 call plug#end()
 
 " Ctrlp configuration
@@ -136,6 +142,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/vim-snippets/UltiSnips']
+
 
 " Clear the search history with enter-key
 nnoremap <CR> :noh<CR><CR>
