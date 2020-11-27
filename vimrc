@@ -118,7 +118,13 @@ Plug 'milkypostman/vim-togglelist'
 " Commenting and uncommenting lines
 Plug 'scrooloose/nerdcommenter'
 
+" Python coverage
 Plug 'alfredodeza/coveragepy.vim'
+
+" PlantUML integration
+Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'tyru/open-browser.vim'
 
 call plug#end()
 
@@ -187,3 +193,6 @@ endif
 
 " Detect Python files by filename
 au BufNewFile,BufRead *.py set filetype=python
+
+" PlantUML configuration
+let g:plantuml_previewer#plantuml_jar_path=$HOME.'/scratch/plantuml/plantuml.jar'
