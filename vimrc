@@ -52,10 +52,6 @@ nnoremap <C-k> :lprev<CR>
 nnoremap <C-l> :cnext<CR>
 nnoremap <C-h> :cprev<CR>
 
-" Toggle coverage reporting for the module
-noremap <leader>cov :Coveragepy refresh<CR>
-" :Coveragepy refresh<CR>
-
 " Fugitive mapping
 noremap <leader>ge :Gedit<CR>
 noremap <leader>gs :Gstatus<CR>
@@ -104,7 +100,7 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 
 " Syntax checking for several languages
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 " Python autocompletion and refactoring
 Plug 'davidhalter/jedi-vim'
@@ -117,9 +113,6 @@ Plug 'milkypostman/vim-togglelist'
 
 " Commenting and uncommenting lines
 Plug 'scrooloose/nerdcommenter'
-
-" Python coverage
-Plug 'alfredodeza/coveragepy.vim'
 
 " PlantUML integration
 Plug 'weirongxu/plantuml-previewer.vim'
