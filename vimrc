@@ -21,6 +21,12 @@ setlocal shiftwidth=4
 setlocal textwidth=79
 setlocal smarttab
 
+" Disable mouse which breaks cmd-c on MacOS
+set mouse=
+if !has('nvim')
+    set ttymouse=
+endif
+
 " Experimental leader mapping
 let mapleader="\<Space>"
 
