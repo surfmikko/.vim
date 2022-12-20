@@ -1,4 +1,4 @@
-VIMC=vim -u vimrc -c 
+VIMC:=$(shell  nvim --version &> /dev/null && echo nvim || echo vim) -u vimrc -c
 
 help:
 	@echo "make install		Install configuration for Vim & Neovim"
@@ -13,6 +13,8 @@ clean:
 neoinit:
 	mkdir -p ~/.config/nvim/
 	ln -fs `pwd`/init.vim ~/.config/nvim/init.vim
+	mkdir -p ~/.local/share/nvim/site
+	ln -fs `pwd`/autoload ~/.local/share/nvim/site/autoload
 
 link_vimrc:
 	ln -fs "`pwd`/vimrc" ~/.vimrc
