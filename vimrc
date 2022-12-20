@@ -54,12 +54,12 @@ nnoremap <C-h> :cprev<CR>
 
 " Fugitive mapping
 noremap <leader>ge :Gedit<CR>
-noremap <leader>gs :Gstatus<CR>
-noremap <leader>gc :Gcommit<CR>
-noremap <leader>gd :Gdiff<CR>
-noremap <leader>gb :Gblame<CR>
+noremap <leader>gg :Git<CR>
+noremap <leader>gc :Git commit<CR>
+noremap <leader>gd :Git diff<CR>
+noremap <leader>gb :Git blame<CR>
 noremap <leader>gr :Gread <CR>
-noremap <leader>gl :Glog -- %<CR>
+noremap <leader>gl :Git log -- %<CR>
 
 " Git Tabs
 nnoremap th  :tabfirst<cr>
@@ -155,7 +155,7 @@ set statusline+=%h      "help file flag
 set statusline+=%m      "modified flag
 set statusline+=%r      "read only flag
 set statusline+=%y      "filetype
-set statusline+=%{fugitive#statusline()} " Git branch
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
