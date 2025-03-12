@@ -92,13 +92,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'kien/ctrlp.vim'
 
 " Textmate-like snippets; engine and snippets are separate repos
-if has('python3')
-    Plug 'sirver/ultisnips'
-else
-    " This is the last version which supports Python2
-    Plug 'sirver/ultisnips', {'tag': '3.2'}
-endif
-
+Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Git integration
