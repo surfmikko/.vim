@@ -60,6 +60,10 @@ nnoremap <C-k> :lprev<CR>
 nnoremap <C-l> :cnext<CR>
 nnoremap <C-h> :cprev<CR>
 
+" Folding config
+set foldtext='+--\ '.getline(v:foldstart)
+set nofoldenable
+
 " Fugitive mapping
 noremap <leader>ge :Gedit<CR>
 noremap <leader>gg :Git<CR>
@@ -90,6 +94,9 @@ nnoremap td  :tabclose<cr>
 
 call plug#begin('~/.vim/bundle')
 
+" <leader>q <leader>l for quick/location lists
+Plug 'milkypostman/vim-togglelist'
+
 " Fuzzy file search
 Plug 'kien/ctrlp.vim'
 
@@ -106,6 +113,9 @@ Plug 'dense-analysis/ale'
 
 " Python autocompletion and refactoring
 Plug 'davidhalter/jedi-vim'
+
+" Python Folding
+Plug 'tmhedberg/SimpylFold'
 
 " Ansible YAML support
 Plug 'pearofducks/ansible-vim'
@@ -127,7 +137,6 @@ call plug#end()
 set wildignore+=*.pyc,**/.git/*,venv/*,.venv/*,*/build/lib/*,**/tmp/*,*.so,*.swp,*.zip,**/bower_components/*,**/node_modules/*
 let g:ctrlp_map = '<c-p>'
 
-" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard -co |& egrep -v "\.(png|jpg|jpeg|gif)$|node_modules"']
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard -co | egrep -v "\.(png|jpg|jpeg|gif)$|node_modules"']
 
 " Jedi configuration
@@ -137,6 +146,7 @@ autocmd FileType python setlocal completeopt-=preview
 
 " Nerdcommenter - Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
+
 " UltiSnips configuration
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -184,7 +194,6 @@ if &term =~ "xterm.*"
 	cmap <Esc>[200~ <nop>
 	cmap <Esc>[201~ <nop>
 endif
-
 
 " Detect Python files by filename
 au BufNewFile,BufRead *.py set filetype=python
