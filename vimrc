@@ -1,18 +1,20 @@
 "vim: set ft=vimrc:
 
-""
-"" General settings
-""
+" General settings
 
 set nocompatible
 syntax on
 filetype plugin indent on
 
-set modelines=1
+" Theme settings
+colorscheme vim
 set bg=dark
 set showcmd
-set ignorecase
+set modelines=1
 set cmdheight=1
+
+" Search settings
+set ignorecase
 
 " Default indent 4, only spaces, never tabs
 setlocal tabstop=4
@@ -27,7 +29,7 @@ if !has('nvim')
     set ttymouse=
 endif
 
-" Experimental leader mapping
+" Use spacebar as leader key
 let mapleader="\<Space>"
 
 " Open help / cheatsheet
