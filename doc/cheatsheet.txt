@@ -1,12 +1,35 @@
-cheatsheet.txt                  For NVIM version 0.3.0  Last change: 2019-11-25
+cheatsheet.txt - NVim Quick Reference                                *cheatsheet*
 
-Cheatsheet for Vim. Navigate tags with <CR> and <BS>                 *cheatsheet*
-===============================================================================
-| <C-hl>, <C-jk>                | Next/previous location/quickfix list
-| <leader>l, <leader>q          | Open location/quickfix list
-| <leader>cc                    | Comment lines
-| <C-Space>                     | Completion
-| <leader>g, <leader>d          | Goto assignments/definitions
-| <leader>n                     | Show usages
-| K                             | Show documentation/Pydoc
-| <leader>r                     | Renaming
+NAVIGATION                                                     *cheat-navigation*
+
+<CR>, <BS>             Jump tag under cursor / jump back
+<C-h>, <C-j>           Location list next/prev
+<C-l>, <C-k>           Quickfix list next/prev
+<leader>l, <leader>q   Open location/quickfix list
+<leader>g, <leader>d   Goto assignments/definitions
+
+EDITING                                                           *cheat-editing*
+
+<leader>r              Rename function
+<leader>cc             Comment lines
+<C-Space>, <C-a>       Completion
+
+PYTHON COMMANDS                                                    *cheat-python*
+
+<leader>n              Show usages
+K                      Show documentation/Pydoc
+
+FOLDS                                                               *cheat-folds*
+
+:set fdm=              manual, indent, expr, marker, syntax, diff
+zM                     Close all folds
+zR                     Open all folds
+za                     Toggle fold
+zo /zO                 Open one/all fold(s) under cursor
+zc/sC                  Close one/all fold/(s) under cursor
+zm                     Fold more
+zr                     Fold less
+
+COMMAND MODE                                                      *cheat-command*
+
+<C-b>, <C-e>           Beginning/end of line
