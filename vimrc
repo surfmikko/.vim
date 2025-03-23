@@ -7,7 +7,7 @@ syntax on
 filetype plugin indent on
 
 " Theme settings
-colorscheme vim
+" colorscheme vim
 set bg=dark
 set showcmd
 set modelines=1
@@ -93,6 +93,10 @@ nnoremap td  :tabclose<cr>
 "
 
 call plug#begin('~/.vim/bundle')
+
+" AI GitHub Copilot / OPenAI ChatGPT
+" Plug 'github/copilot.vim'
+" Plug 'CoderCookE/vim-chatgpt'
 
 " <leader>q <leader>l for quick/location lists
 Plug 'milkypostman/vim-togglelist'
@@ -200,3 +204,12 @@ au BufNewFile,BufRead *.py set filetype=python
 
 " PlantUML configuration
 let g:plantuml_previewer#plantuml_jar_path=$HOME.'/scratch/plantuml/plantuml.jar'
+
+" OpenAI ChatGPT config
+let g:chat_gpt_max_tokens=2000
+let g:chat_gpt_model='gpt-4o-mini'
+let g:chat_gpt_session_mode=0
+let g:chat_gpt_temperature = 0.7
+let g:chat_gpt_lang = 'English'
+let g:chat_gpt_split_direction = 'horizontal'
+let g:split_ratio=4
