@@ -7,7 +7,6 @@ syntax on
 filetype plugin indent on
 
 " Theme settings
-colorscheme vim
 set bg=dark
 set showcmd
 set modelines=1
@@ -106,6 +105,10 @@ call plug#begin('~/.vim/bundle')
 " GitHub Copilot / OpenAI ChatGPT
 " Plug 'github/copilot.vim'
 " Plug 'CoderCookE/vim-chatgpt'
+"
+
+" Better colortheme
+Plug 'cocopon/iceberg.vim'
 
 " <leader>q <leader>l for quick/location lists
 Plug 'milkypostman/vim-togglelist'
@@ -145,6 +148,10 @@ Plug 'aklt/plantuml-syntax'
 Plug 'tyru/open-browser.vim'
 
 call plug#end()
+
+
+" Colorscheme from Icebers
+colorscheme iceberg
 
 " Ctrlp configuration
 set wildignore+=*.pyc,**/.git/*,venv/*,.venv/*,*/build/lib/*,**/tmp/*,*.so,*.swp,*.zip,**/bower_components/*,**/node_modules/*
