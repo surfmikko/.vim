@@ -7,7 +7,7 @@ syntax on
 filetype plugin indent on
 
 " Theme settings
-" colorscheme vim
+colorscheme vim
 set bg=dark
 set showcmd
 set modelines=1
@@ -152,9 +152,15 @@ let g:ctrlp_map = '<c-p>'
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard -co | egrep -v "\.(png|jpg|jpeg|gif)$|node_modules"']
 
+" Ale configuration
+let g:ale_virtualtext_cursor = 0
+
 " Jedi configuration
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#use_splits_not_buffers = "top"
+let g:jedi#show_call_signatures = 0
+let g:jedi#squelch_py_warning = 1
+let g:jedi#popup_on_dot = 1
 autocmd FileType python setlocal completeopt-=preview
 
 " Nerdcommenter - Align line-wise comment delimiters flush left instead of following code indentation
