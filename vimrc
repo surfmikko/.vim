@@ -88,13 +88,22 @@ nnoremap td  :tabclose<cr>
 " "nnoremap tl :tabprev<CR>
 " "nnoremap tn :tabnew<CR>
 
+" Copilot configuration
+let g:copilot_no_tab_map = v:true
+noremap <leader>ce :Copilot enable<CR>
+noremap <leader>cd :Copilot disable<CR>
+imap <silent><script><expr> <C-L> copilot#Accept("\<CR>")
+imap <C-K> <Plug>(copilot-previous)
+imap <C-J> <Plug>(copilot-next)
+
+
 "
 " Install Plugins
 "
 
 call plug#begin('~/.vim/bundle')
 
-" AI GitHub Copilot / OPenAI ChatGPT
+" GitHub Copilot / OpenAI ChatGPT
 " Plug 'github/copilot.vim'
 " Plug 'CoderCookE/vim-chatgpt'
 
